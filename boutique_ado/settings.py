@@ -122,10 +122,11 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DATATBASE_URL' is os.environ:
+if 'DATABASE_URL' is os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
 else:
     DATABASES = {
         'default': {
